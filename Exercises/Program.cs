@@ -1,4 +1,5 @@
-﻿//Saying hello and name on different lines
+﻿/*
+//Saying hello and name on different lines
 string Hello = "Hello and welcome back:";
 
 string Name = "Sebastian Gaarde Thomsen";
@@ -43,3 +44,40 @@ Console.Write("\nFirst number : " + number1);
 Console.Write("\nSecond number : " + number2);
 
 Console.Read();
+
+//Multiplication of three numbers
+int m1 = 2, m2 = 3, m3 = 6;
+Console.WriteLine(m1 + " * " + m2 + " * " + m3 + " = " + (m1*m2*m3));
+
+//Char code
+char å = Convert.ToChar(Console.ReadLine());
+
+//Putting the order of letters in reverse
+char letter1, letter2, letter3;
+
+Console.Write("Input letter: ");
+letter1 = Convert.ToChar(Console.ReadLine());
+
+Console.Write("Input letter: ");
+letter2 = Convert.ToChar(Console.ReadLine());
+
+Console.Write("Input letter: ");
+letter3 = Convert.ToChar(Console.ReadLine());
+
+Console.WriteLine("{0} {1} {2}", letter3, letter2, letter1);
+
+//Take the radius of a cirkel and find the perimeter and area´
+int radius = 12;
+Console.WriteLine(radius + " * 2" + " * 3,14" + " = " + (radius*2*3.14));
+Console.WriteLine("{0} * 2 * 3,14 = {1}", radius, radius*2*3.14);
+
+Console.WriteLine(radius + " * " + radius + " * 3,14 " + " = " + (radius*radius*3.14));
+Console.WriteLine("{0} * {1} * 3,14 = {2}", radius, radius,radius*radius*3.14);
+
+//Take distance and time input and display speed in km/t
+double miles = 31.0685596;
+int kilometers = 50; 
+float hours = 1.598888f;
+Console.WriteLine("{0}/{1} = {2} km/t", kilometers, hours, kilometers/hours);
+Console.WriteLine("{0}/{1} = {2} mph", miles, hours, miles/hours);
+*/
