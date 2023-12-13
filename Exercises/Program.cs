@@ -9,6 +9,8 @@ Console.WriteLine (Hello + "\n" + Name);
 //Code to find a sum of two numbers
 int x = 3, y = 7;
 Console.WriteLine(x + " + " + y + " = " + (x+y));
+Console.WriteLine("{0] + {1} = {2}", x, y, x+y);
+Console.WriteLine($"x = {x} + {y}");
 
 //Code to find the result of dividing two numbers
 int æ = 6, ø = 2;
