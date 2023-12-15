@@ -278,7 +278,7 @@ else if (kx < 0) {
         Console.WriteLine("The coordinate point ({0},{1}) is in quadrant 3", kx, ky);
     }
 }
-*/
+
 //Find out if people are eligible to enter a proffessional course based on certain criteria
 int math, phys, chem, total = 180;
 Console.Write("Write your marks in mathematics: ");
@@ -310,3 +310,4 @@ if (math >= 65) {
 else {
     Console.WriteLine("The candidate is not eligible for admission.");
 }
+*/
