@@ -296,17 +296,7 @@ if (math >= 65) {
             if (total >= 180) {
                 Console.WriteLine("The candidate is eligible for admission.");
             }
-            else {
-                Console.WriteLine("The candidate is not eligible for admission.");
-            }
         }
-        else {
-            Console.WriteLine("The candidate is not eligible for admission.");
-        }
-
-    }
-    else {
-        Console.WriteLine("The candidate is not eligible for admission.");
     }
 }
 else {
