@@ -216,17 +216,18 @@ height = Convert.ToInt32(Console.ReadLine());
 if (height < 147) {
     Console.WriteLine("Your either a dwarf or a child.");
 }
-else if (height == 175) {
-    Console.WriteLine("Congrats, your an average man or tall woman");
+if (height >= 163) {
+    if (height <=175) {
+    Console.WriteLine("Congrats, your between an average man and woman");
+    }
 }
-else if (height == 163) {
-    Console.WriteLine("Congrats, your an avereage woman og short man");
-}
-else if (height >= 180) {
+if (height >= 180) {
+    if (height <=198) {
     Console.WriteLine("Your tall");
+    }
 }
-else if (height <= 160) {
-    Console.WriteLine("Shorty");
+if (height >= 199) {
+    Console.WriteLine("Abnormally tall");
 }
 
 //Finding the largest out of three numbers
