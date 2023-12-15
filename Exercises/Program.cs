@@ -280,23 +280,31 @@ else if (kx < 0) {
 }
 */
 //Find out if people are eligible to enter a proffessional course based on certain criteria
-int math, phys, chem, total;
+int math, phys, chem, total = 180;
 Console.Write("Write your marks in mathematics: ");
 math = Convert.ToInt32(Console.ReadLine());
 Console.Write("Write your marks in physics: ");
 phys = Convert.ToInt32(Console.ReadLine());
 Console.Write("Write your marks in chemistry: ");
 chem = Convert.ToInt32(Console.ReadLine());
-Console.Write("Write you total marks: ");
-total = Convert.ToInt32(Console.ReadLine());
+
 
 if (math >= 65) {
     if (phys >= 55) {
         if (chem >= 50) {
-            if (total >= 180) {
+            if ((math+phys+chem) >= total) {
                 Console.WriteLine("The candidate is eligible for admission.");
             }
+            else {
+            Console.WriteLine("The candidate is not eligible for admission.");
+            }
         }
+        else {
+        Console.WriteLine("The candidate is not eligible for admission.");
+        }
+    }
+    else {
+    Console.WriteLine("The candidate is not eligible for admission.");
     }
 }
 else {
