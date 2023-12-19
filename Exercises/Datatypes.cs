@@ -1,3 +1,4 @@
+/*
 class Datatypes{
 
     static void Main(string[] args){
@@ -7,3 +8,4 @@ class Datatypes{
         Console.WriteLine($"x is {x}, y is {y}, z is {z}");
     }
 }
+*/
