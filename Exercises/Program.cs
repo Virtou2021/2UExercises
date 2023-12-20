@@ -652,7 +652,7 @@ for(i=1;i<=rows;i++){
         Console.Write("*");
     Console.Write("\n");
 }
-*/
+
 //Display a right triangle with numbers
 int i, j, rows;
 Console.Write("Input number of rows: ");
@@ -662,3 +662,71 @@ for(i=1;i<=rows;i++){
         Console.Write(j);
     Console.Write("\n");
 }
+
+//Write a program that reads a set of integers, and then prints the sum of the even and odd integers
+int i1 = 4, i2 = 5, i3 = 120;
+
+while (true) {
+    if (i1%2==0) {
+        if (i2%2==0) {
+            if (i3%2==0) {
+                Console.WriteLine("all even and the sum is {0}", i1+i2+i3);
+                break;
+            }
+            else {
+                Console.WriteLine("even number {0} and uneven number {1}", i1+i2, i3);
+                break;
+            }
+        }
+        else if (i3%2==0) {
+            Console.WriteLine("even number {0} and uneven number {1}", i1+i3, i2);
+            break;
+        }
+        else {
+            Console.WriteLine("even number {0} and uneven number {1}", i1, i2+i3);
+            break;
+        }
+    }
+    else if (i2%2==0) {
+        if (i3%2==0) {
+            Console.WriteLine("even number {0} and uneven number {1}", i2+i3, i1);
+            break;
+        }
+        else {
+            Console.WriteLine("even number {0} and uneven number {1}", i2, i1+i3);
+        }
+    }
+    else if (i3%2==0) {
+        Console.WriteLine("even number {0} and uneven number {1}", i3, i1+i2);
+        break;
+    }
+    else {
+        Console.WriteLine("all uneven and the sum is {0}", i1+i2+i3);
+        break;
+    }
+}
+
+//Write a loop that asks for two numbers, displays the sum, asks if the loop should be continued or stopped
+using System.Net;
+using System.Runtime.CompilerServices;
+
+int numb1, numb2;
+bool cont = false;
+
+do {
+    Console.WriteLine("Input number: ");
+    numb1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input number: ");
+    numb2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("The sum is {0}", numb1+numb2);
+    
+    Console.WriteLine("\nType 'y' to try again, press another key to stop");
+    if (Console.ReadLine() == "y") {
+        cont = true;
+    } 
+    else {
+        cont = false;
+    }
+}
+while (cont);
+*/
