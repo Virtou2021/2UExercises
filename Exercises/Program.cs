@@ -730,3 +730,152 @@ do {
 }
 while (cont);
 */
+//Project: guess the output
+int math = 87, dan = 34, eng = 100;
+
+while (true) {
+    if (math < 60) {
+        Console.WriteLine("You have failed math with a score of {0}", math);
+        if (dan < 60) {
+            Console.WriteLine("You have failed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan <= 99) {
+        Console.WriteLine("Your have passed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan == 100) {
+            Console.WriteLine("You have passed danish with a perfect score of 100!");
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+    }
+    else if (math <= 99) {
+        Console.WriteLine("Your have passed math with a score of {0}", math);
+        if (dan < 60) {
+            Console.WriteLine("You have failed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan <= 99) {
+        Console.WriteLine("Your have passed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan == 100) {
+            Console.WriteLine("You have passed danish with a perfect score of 100!");
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+    }
+    else if (math == 100) {
+        Console.WriteLine("You have passed math with a perfect score of 100!");
+        if (dan < 60) {
+            Console.WriteLine("You have failed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan <= 99) {
+        Console.WriteLine("Your have passed danish with a score of {0}", dan);
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+        else if (dan == 100) {
+            Console.WriteLine("You have passed danish with a perfect score of 100!");
+            if (eng < 60) {
+                Console.WriteLine("You have failed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng <= 99) {
+                Console.WriteLine("Your have passed english with a score of {0}", eng);
+                break;
+            }
+            else if (eng == 100) {
+                Console.WriteLine("You have passed english with a perfect score of 100!");
+                break;
+            }
+        }
+    }
+}
