@@ -733,7 +733,7 @@ while (cont);
 //Project: guess the output
 int math = 87, dan = 34, eng = 100;
 
-while (true) {
+do {
     if (math < 60) {
         Console.WriteLine("You have failed math with a score of {0}", math);
         if (dan < 60) {
@@ -878,4 +878,5 @@ while (true) {
             }
         }
     }
-}
+} 
+while (math > 101 && dan > 101 && eng > 101);
