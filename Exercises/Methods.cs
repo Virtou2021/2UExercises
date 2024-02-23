@@ -1,9 +1,10 @@
-
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8604 // Possible null reference argument.
 class Methods
 {
     static void Main()
     {
-        SubString();
+        SpacesInString();
     }
 
     static void System()
@@ -221,8 +222,125 @@ class Methods
         Console.WriteLine(str.Substring(3, 7) + str.Substring(15, 3) + str.Substring(10, 5) + str.Substring(0, 2) + str.Substring(17, 11));
     }
 
-    static void NextMethod()
+    static void TextToPrint()
     {
-        
+        PrintString("Hello World");
+    }
+
+    static void PrintString(string text) //Connected to TextToPrint method^
+    {
+        Console.WriteLine(text);
+    }
+
+    static void PersonToPrint()
+    {
+        PrintPerson();
+        PrintPerson("Sebastian");
+        PrintPerson("Sebastian", 25);
+        PrintPerson(age: 25, name: "Sebastian");
+    }
+
+    static void PrintPerson(string name = "Sebastian", int age = 25) //Connected to NamesToPrint method^
+    {
+        Console.WriteLine($"{name} is {age} years old.");
+    }
+
+    static void ReturnValue()
+    {
+       Printplus(2,5);
+       Printplus(6);
+    }
+
+    static void Printplus(int x, int y = 5) //Connected to ReturnValue method^
+    {
+        Console.WriteLine($"{x} + {y} = {Plus(x, y)}");
+    }
+
+    static int Plus(int x, int y) //Connected to Printplus method^
+    {
+        return x + y;
+    }
+
+    static int Mathing(int x, int y) //A type of method that hasn't beeen use yet
+
+    {
+        if (x > y)
+        {
+            return x + y;
+        }
+        else
+        {
+            return x - y;
+        }
+    }
+
+    static void Welcome() //Opave 1 Methods
+    {
+        PrintWelcome("Welcome friends");
+    }
+
+    static void PrintWelcome(string text) //Connected to Welcome method^
+    {
+        Console.WriteLine(text);
+    }
+
+    static void WelcomeString() //Opave 2 Methods
+    {
+        string name;
+        Console.WriteLine("Write your name: ");
+        name = Console.ReadLine();
+
+        PrintFriend(name);
+    }
+
+    static void PrintFriend(string name) //Connected to WelcomeString method^
+    {
+        Console.WriteLine($"Welcome friend {name}!\nHave a nice day!");
+    }
+
+    static void TwoNumbers() //Opave 3 Methods
+    {
+        Console.WriteLine("Write a number: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Write another number: ");
+        int y = Convert.ToInt32(Console.ReadLine());
+
+        PrintTwoNumbers(x, y);
+    }
+
+    static void PrintTwoNumbers(int x, int y) //Connected to TwoNumbers method^
+    {
+        Console.WriteLine($"The sum of the two numbers is : {PrintSum(x, y)}");
+    }
+
+    static int PrintSum(int x, int y) //Connected to PrintTwoNumbers method^
+    {
+        return x + y;
+    }
+
+    static void SpacesInString() //Opave 4 Methods
+    {
+        string str;
+        Console.WriteLine("Write a string: ");
+        str = Console.ReadLine();
+
+        Console.WriteLine($"\"{str}\" contains {SpaceCount(str)} spaces");
+    }
+
+    static int SpaceCount(string str)
+    {   
+        int spcctr = 0;
+        string str1;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            str1 = str.Substring(i, 1);
+            if (str1 == " ")
+                spcctr++;
+        }
+
+        return spcctr;
     }
 }
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
