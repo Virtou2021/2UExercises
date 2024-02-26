@@ -4,7 +4,7 @@ class Methods
 {
     static void Main()
     {
-        SpacesInString();
+        IndividualDigitSum();
     }
 
     static void System()
@@ -327,7 +327,7 @@ class Methods
         Console.WriteLine($"\"{str}\" contains {SpaceCount(str)} spaces");
     }
 
-    static int SpaceCount(string str)
+    static int SpaceCount(string str) //Connected to SpacesInString method^
     {   
         int spcctr = 0;
         string str1;
@@ -340,6 +340,152 @@ class Methods
         }
 
         return spcctr;
+    }
+
+    static void ElementSum() //Opave 5 Methods
+    {
+        int[] arr = new int[10];
+
+        Console.Write("Input number of elements: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write($"Input values of the {n} elements in the array: \n");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Element - {i} : ");
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine($"The sum of all the elements is : {ArraySum(arr, n)}");
+    }
+
+    static int ArraySum(int[] arr, int n, int sum = 0) //Connected to ElementSum method^
+    {
+        for (int i = 0; i < n; i++)
+        {
+            sum += arr[i];
+        }
+
+        return sum;
+    }
+
+    static void SwapTwoIntegers() //Opave 6 Methods
+    {
+        int x, y;
+        Console.Write("Write a number : ");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Write another number : ");
+        y = Convert.ToInt32(Console.ReadLine());
+
+        SwapIntegers(ref x, ref y);
+        Console.WriteLine($"Swapped: x = {x}, y = {y}");
+    }
+
+    static void SwapIntegers(ref int x, ref int y) //Connected to SwapTwoIntegers method^
+    {
+        int temp = x;
+        x = y;
+        y = temp;
+    }
+
+    static void IntToThePowerOfExponent() //Opave 7 Methods
+    {
+        int x, y;
+        Console.Write("Write a number : ");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Write the exponent : ");
+        y = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"{x} to the power of {y} is : {PowerOf(x, y)}");
+    }
+
+    static int PowerOf(int x, int y) //Connected to IntToThePowerOfExponent method^
+    {
+        int result = 1;
+
+        for (int i = 1; i <= y; i++)
+        {
+            result *= x;
+        }
+
+        return result;
+    }
+
+    static void NNumberFibonacciSequence() //Opave 8 Methods
+    {
+        int n;
+        Console.Write("Write a number : ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Fibonacci(n);
+    }
+
+    static void Fibonacci(int n) //Connected to NNumberFibonacciSequence method^
+    {
+        int a = 0, b = 1, c = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{a} ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+
+    static void CheckPrimeNumber() //Opave 9 Methods
+    {
+        int n;
+        Console.Write("Write a number : ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        if (PrimeNumber(n))
+        {
+            Console.WriteLine($"{n} is a prime number");
+        }
+        else
+        {
+            Console.WriteLine($"{n} is not a prime number");
+        }
+    }
+
+    static bool PrimeNumber(int n) //Connected to CheckPrimeNumber method^
+    {
+        if (n == 1 || n == 0)
+        {
+            return false;
+        }
+
+        for (int i = 2; i <= n / 2; i++)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    static void IndividualDigitSum() //Opave 10 Methods
+    {
+        int n;
+        Console.Write("Write a number : ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"The sum of the individual digits is : {DigitSum(n)}");
+    }
+
+    static int DigitSum(int n) //Connected to IndividualDigitSum method^
+    {
+        int sum = 0;
+
+        while (n != 0)
+        {
+            sum += n % 10;
+            n /= 10;
+        }
+
+        return sum;
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
