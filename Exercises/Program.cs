@@ -141,7 +141,7 @@ else {
     Console.WriteLine(x1 + " and " + y1 +  " are not equal");
 }
 
-//Check if a number is even orNumb
+//Check if a number is even or uneven
 int digit;
 Console.Write("Enter digit: ");
 digit = Convert.ToInt32(Console.ReadLine());
@@ -707,9 +707,6 @@ while (true) {
 }
 
 //Write a loop that asks for two numbers, displays the sum, asks if the loop should be continued or stopped
-using System.Net;
-using System.Runtime.CompilerServices;
-
 int numb1, numb2;
 bool cont = false;
 
@@ -729,4 +726,247 @@ do {
     }
 }
 while (cont);
+
+//Project: guess the output
+double mathA = 87, danA = 59, engB = 100;
+
+mathA *= 1.03d;
+danA *= 1.03d;
+
+switch (mathA) {
+    case < 60 and >= 0:
+        Console.WriteLine("Falied math");
+        break;
+    case <= 100 and >= 60:
+        Console.WriteLine("Passed math");
+        break;
+    default:
+        Console.WriteLine("Invalid input");
+        break;
+}
+switch (danA) {
+    case < 60 and >= 0:
+        Console.WriteLine("Failed danish");
+        break;
+    case <= 100 and >= 60:
+        Console.WriteLine("Passed danish");
+        break;
+    default:
+        Console.WriteLine("Invalid input");
+        break;
+}
+switch (engB) {
+    case < 60 and >= 0:
+        Console.WriteLine("Failed english");
+        break;
+    case <= 100 and >= 60:
+        Console.WriteLine("Passed english");
+        break;
+    default:
+        Console.WriteLine("Invalid input");
+        break;
+}
+
+//Program that stores elements in arrays and prints them
+int[] arr = new int[10];
+int i;
+
+Console.Write("Input 10 elements in the array: ");
+for (i = 0; i < 10; i++)
+{
+    Console.Write("Element - {0} : ", i);
+    arr[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.Write("\nElements in the array are: ");
+for (i = 0; i < 10; i++) 
+{
+    Console.Write("{0} ", arr[i]);
+}
+
+//Read n values in an array an display them in reverse order
+int[] arr = new int[100];
+int i, n;
+
+Console.Write("Input number of elements in the array: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of {0} number of elements in the array: \n", n);
+for (i = 0; i < n; i++) {
+    Console.Write("Element - {0} : ",i);
+    arr[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.Write("\nElements in the array are: ");
+for (i = 0; i < n; i++) {
+    Console.Write("{0} ", arr[i]);
+}
+
+Console.Write("\nElements in the array in reverse are: ");
+for (i = n - 1; i >= 0; i--) {
+    Console.Write("{0} ", arr[i]);
+}
+
+//Find the sum of all array elements
+int[] arr = new int [100];
+int i, n, sum = 0;
+
+Console.Write("Input number of elements: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of the {0} elements in the array: \n", n);
+for (i = 0; i < n; i++) {
+    Console.Write("Element - {0} : ", i);
+    arr[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+for (i = 0; i < n; i++) {
+    sum += arr[i];
+}
+
+Console.Write("The sum of all the elements is : {0}", sum);
+
+//Copy elements from array one to array two
+int[] arr1 = new int[100];
+int[] arr2 = new int[100];
+int i, n;
+
+Console.Write("Input number of elements in the array: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of {0} number of elements in the array: \n", n);
+for (i = 0; i < n; i++) {
+    Console.Write("Element - {0} : ",i);
+    arr1[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+for (i = 0; i < n; i++) {
+    arr2[i] = arr1[i];
+}
+
+Console.Write("\nElements in the first array are: ");
+for (i = 0; i < n; i++) {
+    Console.Write("{0} ", arr1[i]);
+}
+
+Console.Write("\nElements copied into the second array are: ");
+for (i = 0; i < n; i++) {
+    Console.Write("{0} ", arr2[i]);
+}
+
+//Count duplicate elements in an array
+Console.Write("Input number of elements in the array: ");
+int arraySize = 0;
+arraySize = Convert.ToInt32(Console.ReadLine());
+
+int[] arrayInt = new int[arraySize];
+
+Console.Write($"Input {arraySize} elements in the array : \n");
+for(int i = 0; i < arrayInt.Length; i++) {
+    Console.Write($"Element - {i} : ");
+    arrayInt[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+int duplicates = 0;
+
+for (int i = 0; i < arrayInt.Length - 1; i++) {
+    for (int j = i + 1; j < arrayInt.Length; j++) {
+        if (arrayInt[i] == arrayInt[j]) {
+            duplicates++;
+            break;
+        }
+    }
+}
+
+Console.WriteLine("Number of duplicate elements foun in the array is: {0}", duplicates);
+
+//Print all unique elements in an array
+int n, ctr = 0;
+int[] arr = new int[100];
+int i, j, k;
+
+Console.Write("Input number of elements: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of {0} number of elements in the array: \n", n);
+for (i = 0; i < n; i++) {
+    Console.Write("Element - {0} : ",i);
+    arr[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.Write("\nThe unique elements found in the array are: \n");
+for (i = 0; i < n; i++) {
+    ctr = 0;
+
+    for (j = 0; j < i - 1; j++) {
+        if (arr[i] == arr[j]){
+            ctr++;
+        }
+    }
+
+    for (k = i + 1; k < n; k++) {
+        if (arr[i] == arr[k]) {
+            ctr++;
+        }
+
+        if (arr[i] == arr[i+1]) {
+            i++;
+        }
+    }
+
+    if (ctr == 0) {
+        Console.Write("{0} ", arr[i]);
+    }
+}
+
+//Merge two arrays of the same size according to ascending order
+int[] arr1 = new int[100];
+int[] arr2 = new int[100];
+int[] arr3 = new int[200];
+int s1, s2, s3;
+int i, j, k;
+
+Console.Write("Input number of elements in the array: ");
+s1 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of {0} number of elements in the array: \n", s1);
+for (i = 0; i < s1; i++) {
+    Console.Write("Element - {0} : ",i);
+    arr1[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.Write("\nInput number of elements in the array: ");
+s2 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input values of {0} number of elements in the array: \n", s2);
+for (i = 0; i < s2; i++) {
+    Console.Write("Element - {0} : ",i);
+    arr2[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+s3 = s1 + s2;
+
+for (i = 0; i < s1; i++) {
+    arr3[i] = arr1[i];
+}
+
+for (j = 0; i < s2; j++) {
+    arr3[i] = arr2[j];
+    i++;
+}
+
+for (i = 0; i < s3; i++) {
+    for (k = 0; k < s3; k++) {
+        if (arr3[k] >= arr3[k+1]) {
+            j = arr3[k+1];
+            arr3[k+1] = arr3[k];
+            arr3[k] = j;
+        }
+    }
+}
+
+Console.Write("The merged array in ascending order is: \n");
+for (i = 0; i < s3; i++) {
+    Console.Write($"{arr3[i]} ");
+}
 */
