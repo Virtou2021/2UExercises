@@ -1,10 +1,14 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8604 // Possible null reference argument.
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
 class Methods
 {
     static void Main()
     {
-        IndividualDigitSum();
+        MathCalculate();
     }
 
     static void System()
@@ -247,8 +251,8 @@ class Methods
 
     static void ReturnValue()
     {
-       Printplus(2,5);
-       Printplus(6);
+        Printplus(2, 5);
+        Printplus(6);
     }
 
     static void Printplus(int x, int y = 5) //Connected to ReturnValue method^
@@ -261,18 +265,8 @@ class Methods
         return x + y;
     }
 
-    static int Mathing(int x, int y) //A type of method that hasn't beeen use yet
 
-    {
-        if (x > y)
-        {
-            return x + y;
-        }
-        else
-        {
-            return x - y;
-        }
-    }
+
 
     static void Welcome() //Opave 1 Methods
     {
@@ -328,7 +322,7 @@ class Methods
     }
 
     static int SpaceCount(string str) //Connected to SpacesInString method^
-    {   
+    {
         int spcctr = 0;
         string str1;
 
@@ -432,13 +426,13 @@ class Methods
         }
     }
 
-    static void CheckPrimeNumber() //Opave 9 Methods
+    static void PrimeNumber() //Opave 9 Methods
     {
         int n;
         Console.Write("Write a number : ");
         n = Convert.ToInt32(Console.ReadLine());
 
-        if (PrimeNumber(n))
+        if (PrimeNumber(n, 2)) // Add the missing argument 'i'
         {
             Console.WriteLine($"{n} is a prime number");
         }
@@ -448,25 +442,20 @@ class Methods
         }
     }
 
-    static bool PrimeNumber(int n) //Connected to CheckPrimeNumber method^
+    static bool PrimeNumber(int n, int i) //Connected to PrimeNumber method^
     {
-        if (n == 1 || n == 0)
+
+        if (n % i == 0 || n == 1)
         {
             return false;
         }
-
-        for (int i = 2; i <= n / 2; i++)
+        else
         {
-            if (n % i == 0)
-            {
-                return false;
-            }
+            return true;
         }
-
-        return true;
     }
 
-    static void IndividualDigitSum() //Opave 10 Methods
+    static void ElementDigitSum() //Opave 10 Methods
     {
         int n;
         Console.Write("Write a number : ");
@@ -475,7 +464,7 @@ class Methods
         Console.WriteLine($"The sum of the individual digits is : {DigitSum(n)}");
     }
 
-    static int DigitSum(int n) //Connected to IndividualDigitSum method^
+    static int DigitSum(int n) //Connected to ElementDigitSum method^
     {
         int sum = 0;
 
@@ -486,6 +475,44 @@ class Methods
         }
 
         return sum;
+    }
+
+
+
+
+    static void PrintStudents()
+    {
+        Printclass("", "", "2.U");
+        Printclass("", "", "2.Z", 24);
+        Printclass("", "", students: 25);
+    }
+
+    static void Printclass(string class1, string class2, string class3 = "2.Y", int students = 18) //Connected to PrintStudents method^
+    {
+        Console.WriteLine($"{class3} has {students} students.");
+    }
+
+    static int MathCalculate()
+    {
+        int res = Mathing(3, 2);
+        Console.WriteLine(res);
+        return res;
+    }
+
+    static int Mathing(int x, int y)
+    {
+        int res;
+
+        if (x < 5)
+        {
+            res = x + y;
+        }
+        else
+        {
+            res = x - y;
+        }
+
+        return res;
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
