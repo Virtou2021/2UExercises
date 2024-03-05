@@ -1,14 +1,12 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8604 // Possible null reference argument.
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
+using System.IO.Compression;
 
 class Methods
 {
     static void Main()
     {
-        MathCalculate();
+        ToOneRecursion();
     }
 
     static void System()
@@ -404,18 +402,15 @@ class Methods
         return result;
     }
 
-    static void NNumberFibonacciSequence() //Opave 8 Methods
+    static void NumberFibonacciSequence() //Opave 8 Methods
     {
-        int n;
         Console.Write("Write a number : ");
-        n = Convert.ToInt32(Console.ReadLine());
-
-        Fibonacci(n);
+        Fibonacci(Convert.ToInt32(Console.ReadLine()!));
     }
 
     static void Fibonacci(int n) //Connected to NNumberFibonacciSequence method^
     {
-        int a = 0, b = 1, c = 0;
+        int a = 0, b = 1, c;
 
         for (int i = 0; i < n; i++)
         {
@@ -513,6 +508,47 @@ class Methods
         }
 
         return res;
+    }
+
+
+
+
+    static void NaturalRecursion() //Opgave 1 Recursion
+    {
+        Console.Write("How many numbers to print : ");
+        int crt = Convert.ToInt32(Console.ReadLine());
+
+        PrintNatural(1, crt);
+    }
+    static int PrintNatural(int zero, int crt) //Connected to PrintNaturalRecursion Method^
+    {
+        if (crt < 1)
+        {
+            return zero;
+        }
+        crt--;
+        Console.Write($" {zero} ");
+        return crt + PrintNatural(zero + 1, crt);
+    }
+
+    static void ToOneRecursion()
+    {
+        Console.Write("How many numbers to print : ");
+        int crt = Convert.ToInt32(Console.ReadLine());
+
+        ToOne(crt, 1);
+    }
+
+    static int ToOne(int zero, int crt)
+    {
+        if (crt < 1)
+        {
+            return zero;
+        }
+
+        Console.Write($" {crt} ");
+        crt--;
+        return ToOne(crt, zero);
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
