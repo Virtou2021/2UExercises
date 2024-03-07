@@ -1,6 +1,7 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8604 // Possible null reference argument.
-using System.IO.Compression;
+
+using System.ComponentModel.DataAnnotations;
 
 class Methods
 {
@@ -520,6 +521,7 @@ class Methods
 
         PrintNatural(1, crt);
     }
+
     static int PrintNatural(int zero, int crt) //Connected to PrintNaturalRecursion Method^
     {
         if (crt < 1)
@@ -537,6 +539,7 @@ class Methods
         int crt = Convert.ToInt32(Console.ReadLine());
 
         ToOne(crt, 1);
+        Console.Write("\n\n");
     }
 
     static int ToOne(int zero, int crt)
@@ -549,6 +552,46 @@ class Methods
         Console.Write($" {crt} ");
         crt--;
         return ToOne(crt, zero);
+    }
+
+    static void CombinePrime()
+    {
+        Console.Write("How many numbers to sum : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"The sum is : {SumOfTen(1, n)}");
+    }
+
+    static int SumOfTen(int min, int max)
+    {
+        return CalcuSum(min, max);
+    }
+
+    static int CalcuSum(int min, int val)
+    {
+        if (val == min)
+        {
+            return val;
+        }
+        return val + CalcuSum(min, val - 1);
+    }
+
+    static void DigitSeparater()
+    {
+        Console.Write("Input a digit : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"The digits in the number {n} are : ");
+        Separation(n);
+    }
+
+    static int Separation(int n)
+    {
+        if (n < 10)
+        {
+            Console.Write($"{n} ");
+            return n;
+        }
+        Separation(n / 10);
+        Console.Write($" {n % 10}");
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
