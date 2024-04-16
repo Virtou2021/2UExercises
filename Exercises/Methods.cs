@@ -7,7 +7,7 @@ class Methods
 {
     static void Main()
     {
-        FibonacciRec();
+        AverageAndCounter();
     }
 
     static void System()
@@ -703,7 +703,7 @@ class Methods
         }
     }
 
-    static void Factorial()
+    static void Factorial() //Opgave 9 Recursion
     {
         Console.Write("Input any positive number : ");
         int n = Convert.ToInt32(Console.ReadLine());
@@ -711,7 +711,7 @@ class Methods
         Console.WriteLine($"The Factorial of {n} is : {fact}");
     }
 
-    static long FactorialCalcu(int n)
+    static long FactorialCalcu(int n) //Connected to Factorial Method^
     {
         if (n == 0)
         {
@@ -720,17 +720,18 @@ class Methods
         return n * FactorialCalcu(n - 1);
     }
 
-    static void FibonacciRec()
+    static void FibonacciRec() //Opgave 10 Recursion
     {
         Console.Write("Input number of terms for the Fibonacci series : ");
         int n = Convert.ToInt32(Console.ReadLine());
 
-        for (int i = 0; i< n; i++){
+        for (int i = 0; i < n; i++)
+        {
             Console.Write($"{FindFibonacci(i)} ");
         }
     }
 
-    static int FindFibonacci(int n, int p = 0, int q = 1)
+    static int FindFibonacci(int n, int p = 0, int q = 1) //Connected to FibonacciRec Method^
     {
         for (int i = 0; i < n; i++)
         {
@@ -739,6 +740,68 @@ class Methods
             q = temp + q;
         }
         return p;
+    }
+
+
+
+
+    static void ForLoop()
+    {
+        Console.Write("Input number of times : ");
+        int j = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= j; i++)
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+
+    static void NaturalLoop() //Opgave 1 For loops
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write($"{i} ");
+        }
+    }
+
+    static void SumForLoop()
+    {
+        int sum = 0;
+        for (int i = 1; i <= 10; i++)
+        {
+            sum += i;
+            Console.Write($"{i} ");
+        }
+        Console.WriteLine($"\nThe sum is: {sum}");
+    }
+
+    static void SumNaturalN()
+    {
+        int sum = 0;
+        Console.Write("Input number: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"The first {n} natural numbers are: ");
+
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+            Console.Write($"{i} ");
+        }
+        Console.WriteLine($"\nThe sum is: {sum}");
+    }
+
+    static void AverageAndCounter()
+    {
+        int sum = 0;
+        Console.WriteLine("Input 10 numbers");
+
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write($"Number-{i}: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            sum += n;
+        }
+        Console.WriteLine($"The average is {sum / 10}");
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
