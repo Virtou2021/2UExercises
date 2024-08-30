@@ -1,10 +1,13 @@
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8604 // Possible null reference argument.
+
+using System.ComponentModel.DataAnnotations;
+
 class Methods
 {
     static void Main()
     {
-        IndividualDigitSum();
+        PracticeWhile2();
     }
 
     static void System()
@@ -247,8 +250,8 @@ class Methods
 
     static void ReturnValue()
     {
-       Printplus(2,5);
-       Printplus(6);
+        Printplus(2, 5);
+        Printplus(6);
     }
 
     static void Printplus(int x, int y = 5) //Connected to ReturnValue method^
@@ -261,18 +264,8 @@ class Methods
         return x + y;
     }
 
-    static int Mathing(int x, int y) //A type of method that hasn't beeen use yet
 
-    {
-        if (x > y)
-        {
-            return x + y;
-        }
-        else
-        {
-            return x - y;
-        }
-    }
+
 
     static void Welcome() //Opave 1 Methods
     {
@@ -328,7 +321,7 @@ class Methods
     }
 
     static int SpaceCount(string str) //Connected to SpacesInString method^
-    {   
+    {
         int spcctr = 0;
         string str1;
 
@@ -410,18 +403,15 @@ class Methods
         return result;
     }
 
-    static void NNumberFibonacciSequence() //Opave 8 Methods
+    static void NumberFibonacciSequence() //Opave 8 Methods
     {
-        int n;
         Console.Write("Write a number : ");
-        n = Convert.ToInt32(Console.ReadLine());
-
-        Fibonacci(n);
+        Fibonacci(Convert.ToInt32(Console.ReadLine()!));
     }
 
     static void Fibonacci(int n) //Connected to NNumberFibonacciSequence method^
     {
-        int a = 0, b = 1, c = 0;
+        int a = 0, b = 1, c;
 
         for (int i = 0; i < n; i++)
         {
@@ -432,13 +422,13 @@ class Methods
         }
     }
 
-    static void CheckPrimeNumber() //Opave 9 Methods
+    static void PrimeNumber() //Opave 9 Methods
     {
         int n;
         Console.Write("Write a number : ");
         n = Convert.ToInt32(Console.ReadLine());
 
-        if (PrimeNumber(n))
+        if (PrimeNumber(n, 2)) // Add the missing argument 'i'
         {
             Console.WriteLine($"{n} is a prime number");
         }
@@ -448,25 +438,20 @@ class Methods
         }
     }
 
-    static bool PrimeNumber(int n) //Connected to CheckPrimeNumber method^
+    static bool PrimeNumber(int n, int i) //Connected to PrimeNumber method^
     {
-        if (n == 1 || n == 0)
+
+        if (n % i == 0 || n == 1)
         {
             return false;
         }
-
-        for (int i = 2; i <= n / 2; i++)
+        else
         {
-            if (n % i == 0)
-            {
-                return false;
-            }
+            return true;
         }
-
-        return true;
     }
 
-    static void IndividualDigitSum() //Opave 10 Methods
+    static void ElementDigitSum() //Opave 10 Methods
     {
         int n;
         Console.Write("Write a number : ");
@@ -475,7 +460,7 @@ class Methods
         Console.WriteLine($"The sum of the individual digits is : {DigitSum(n)}");
     }
 
-    static int DigitSum(int n) //Connected to IndividualDigitSum method^
+    static int DigitSum(int n) //Connected to ElementDigitSum method^
     {
         int sum = 0;
 
@@ -486,6 +471,361 @@ class Methods
         }
 
         return sum;
+    }
+
+
+
+
+    static void PrintStudents()
+    {
+        Printclass("", "", "2.U");
+        Printclass("", "", "2.Z", 24);
+        Printclass("", "", students: 25);
+    }
+
+    static void Printclass(string class1, string class2, string class3 = "2.Y", int students = 18) //Connected to PrintStudents method^
+    {
+        Console.WriteLine($"{class3} has {students} students.");
+    }
+
+    static int MathCalculate()
+    {
+        int res = Mathing(3, 2);
+        Console.WriteLine(res);
+        return res;
+    }
+
+    static int Mathing(int x, int y)
+    {
+        int res;
+
+        if (x < 5)
+        {
+            res = x + y;
+        }
+        else
+        {
+            res = x - y;
+        }
+
+        return res;
+    }
+
+
+
+
+    static void NaturalRecursion() //Opgave 1 Recursion
+    {
+        Console.Write("How many numbers to print : ");
+        int crt = Convert.ToInt32(Console.ReadLine());
+
+        PrintNatural(1, crt);
+    }
+
+    static int PrintNatural(int zero, int crt) //Connected to PrintNaturalRecursion Method^
+    {
+        if (crt < 1)
+        {
+            return zero;
+        }
+        crt--;
+        Console.Write($" {zero} ");
+        return crt + PrintNatural(zero + 1, crt);
+    }
+
+    static void ToOneRecursion() //Opgave 2 Recursion
+    {
+        Console.Write("How many numbers to print : ");
+        int crt = Convert.ToInt32(Console.ReadLine());
+
+        ToOne(crt, 1);
+        Console.Write("\n\n");
+    }
+
+    static int ToOne(int crt, int zero) //Connected to ToOneRecursion Method^
+    {
+        if (crt < 1)
+        {
+            return zero;
+        }
+
+        Console.Write($" {crt} ");
+        crt--;
+        return ToOne(crt, zero);
+    }
+
+    static void CombinePrime() //Opgave 3 Recursion
+    {
+        Console.Write("How many numbers to sum : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"The sum is : {SumOfTen(1, n)}");
+    }
+
+    static int SumOfTen(int min, int max) //Connected to CombinePrime Method^
+    {
+        return CalcuSum(min, max);
+    }
+
+    static int CalcuSum(int min, int val) //Connected to SumOfTen Method^
+    {
+        if (val == min)
+        {
+            return val;
+        }
+        return val + CalcuSum(min, val - 1);
+    }
+
+    static void DigitSeparater() //Opgave 4 Recursion
+    {
+        Console.Write("Input a digit : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"The digits in the number {n} are : ");
+        Separation(n);
+    }
+
+    static void Separation(int n) //Connected to DigitSeparater Method^
+    {
+        if (n < 10)
+        {
+            Console.Write($"{n} ");
+            return;
+        }
+        Separation(n / 10);
+        Console.Write($"{n % 10} ");
+    }
+
+    static void DigitCount() //Opgave 5 Recursion
+    {
+        Console.Write("Input a digit : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"The number of digits in {n} are : {DigitCounter(n, 0)}");
+    }
+
+    static int DigitCounter(int n, int no) //Connected to DigitCount Method^
+    {
+        if (n == 0)
+        {
+            return no;
+        }
+        return DigitCounter(n / 10, ++no);
+    }
+
+    static void NumberRange() //Opgave 6 Recursion
+    {
+        Console.Write("Input a digit : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"All even numbers from 1 to {n} are : ");
+        OddEvenRange(2, n);
+        Console.WriteLine($"\nAll Odd numbers from 1 to {n} are : ");
+        OddEvenRange(1, n);
+        return;
+    }
+
+    static void OddEvenRange(int no, int n) //Connected to NumberRange Method^
+    {
+        if (n < no)
+        {
+            return;
+        }
+        Console.Write($" {no} ");
+        OddEvenRange(no + 2, n);
+    }
+
+    static int YesNoPrime() //Opgave 7 Recursion
+    {
+        int no;
+        Console.Write("Input a digit : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        no = CheckPrime(n, n / 2);
+
+        if (no == 1)
+        {
+            Console.WriteLine($"{n} is a prime number");
+        }
+        else
+        {
+            Console.WriteLine($"{n} is not a prime number");
+        }
+        return 0;
+    }
+
+    static int CheckPrime(int n, int no) //Connected to YesNoPrime Method^
+    {
+        if (no == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            if (n % no == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return CheckPrime(n, no - 1);
+            }
+        }
+    }
+
+    static void Palindrome() //Opgave 8 Recursion
+    {
+        Console.Write("Input a string : ");
+        string text = Console.ReadLine();
+        bool tf = CheckPalindrome(text);
+
+        if (tf == true)
+        {
+            Console.WriteLine("The string is Palindrome");
+        }
+        else
+        {
+            Console.WriteLine("The string is not Palindrome");
+        }
+    }
+
+    static bool CheckPalindrome(string text) //Connected to Palindrome Method^
+    {
+        if (text.Length <= 1)
+        {
+            return true;
+        }
+        else
+        {
+            if (text[0] != text[text.Length - 1])
+            {
+                return false;
+            }
+            else
+            {
+                return CheckPalindrome(text.Substring(1, text.Length - 2));
+            }
+        }
+    }
+
+    static void Factorial() //Opgave 9 Recursion
+    {
+        Console.Write("Input any positive number : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        long fact = FactorialCalcu(n);
+        Console.WriteLine($"The Factorial of {n} is : {fact}");
+    }
+
+    static long FactorialCalcu(int n) //Connected to Factorial Method^
+    {
+        if (n == 0)
+        {
+            return 1;
+        }
+        return n * FactorialCalcu(n - 1);
+    }
+
+    static void FibonacciRec() //Opgave 10 Recursion
+    {
+        Console.Write("Input number of terms for the Fibonacci series : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{FindFibonacci(i)} ");
+        }
+    }
+
+    static int FindFibonacci(int n, int p = 0, int q = 1) //Connected to FibonacciRec Method^
+    {
+        for (int i = 0; i < n; i++)
+        {
+            int temp = p;
+            p = q;
+            q = temp + q;
+        }
+        return p;
+    }
+
+
+
+
+    static void ForLoop() //For loop
+    {
+        Console.Write("Input number of times : ");
+        int j = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= j; i++)
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+
+    static void NaturalLoop() //Opgave 1 For loops
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write($"{i} ");
+        }
+    }
+
+    static void SumForLoop() //Opgave 2 For loops
+    {
+        int sum = 0;
+        for (int i = 1; i <= 10; i++)
+        {
+            sum += i;
+            Console.Write($"{i} ");
+        }
+        Console.WriteLine($"\nThe sum is: {sum}");
+    }
+
+    static void SumNaturalN() //Opgave 3 For loops
+    {
+        int sum = 0;
+        Console.Write("Input number: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"The first {n} natural numbers are: ");
+
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+            Console.Write($"{i} ");
+        }
+        Console.WriteLine($"\nThe sum is: {sum}");
+    }
+
+    static void AverageAndCounter() //OPgave 4 For loops
+    {
+        int sum = 0;
+        Console.WriteLine("Input 10 numbers");
+
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write($"Number-{i}: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            sum += n;
+        }
+        Console.WriteLine($"The average is {sum / 10}");
+    }
+
+
+
+
+    static void PracticeWhile() //While loop
+    {
+        int i = 1;
+        while (i < 5)
+        {
+            Console.WriteLine($"x is {i}");
+            i++;
+        }
+    }
+
+    static void PracticeWhile2() //Do-While loop
+    {
+        int i = 1;
+        do
+        {
+            Console.WriteLine($"x is {i}");
+            i++;
+        }
+        while (i < 5);
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
