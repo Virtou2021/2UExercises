@@ -7,7 +7,7 @@ class Methods
 {
     static void Main()
     {
-        AverageAndCounter();
+        PracticeWhile2();
     }
 
     static void System()
@@ -745,7 +745,7 @@ class Methods
 
 
 
-    static void ForLoop()
+    static void ForLoop() //For loop
     {
         Console.Write("Input number of times : ");
         int j = Convert.ToInt32(Console.ReadLine());
@@ -764,7 +764,7 @@ class Methods
         }
     }
 
-    static void SumForLoop()
+    static void SumForLoop() //Opgave 2 For loops
     {
         int sum = 0;
         for (int i = 1; i <= 10; i++)
@@ -775,7 +775,7 @@ class Methods
         Console.WriteLine($"\nThe sum is: {sum}");
     }
 
-    static void SumNaturalN()
+    static void SumNaturalN() //Opgave 3 For loops
     {
         int sum = 0;
         Console.Write("Input number: ");
@@ -790,7 +790,7 @@ class Methods
         Console.WriteLine($"\nThe sum is: {sum}");
     }
 
-    static void AverageAndCounter()
+    static void AverageAndCounter() //OPgave 4 For loops
     {
         int sum = 0;
         Console.WriteLine("Input 10 numbers");
@@ -802,6 +802,30 @@ class Methods
             sum += n;
         }
         Console.WriteLine($"The average is {sum / 10}");
+    }
+
+
+
+
+    static void PracticeWhile() //While loop
+    {
+        int i = 1;
+        while (i < 5)
+        {
+            Console.WriteLine($"x is {i}");
+            i++;
+        }
+    }
+
+    static void PracticeWhile2() //Do-While loop
+    {
+        int i = 1;
+        do
+        {
+            Console.WriteLine($"x is {i}");
+            i++;
+        }
+        while (i < 5);
     }
 }
 #pragma warning restore CS8604 // Possible null reference argument.
